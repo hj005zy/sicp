@@ -1,4 +1,4 @@
-;;; accumuldate.scm
+;;; accumulate.scm
 
 (define (accumulate op initial sequence)
     (if (null? sequence)
