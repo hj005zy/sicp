@@ -4,4 +4,4 @@
     (if (null? items)
         '()
         (cons (proc (car items))
-              (map proc (crd items)))))
+              (map proc (cdr items)))))
