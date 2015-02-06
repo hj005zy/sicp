@@ -6,4 +6,3 @@
 	    (begin (set! balance (- balance amount))
 	           balance)
 	    "Insufficient funds")))
-
