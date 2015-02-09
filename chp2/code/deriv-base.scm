@@ -1,4 +1,4 @@
-;;; deriv-lib.scm
+;;; deriv-base.scm
 
 (define (variable? x) (symbol? x))
 

@@ -1,12 +1,4 @@
-;;; mente-carlo.scm
-
-(load "gcd.scm")
-
-(define (estimate-pi trials)
-    (sqrt (/ 6 (monte-carlo trials cesaro-test))))
-
-(define (cesaro-test)
-    (= (gcd (rand) (rand)) 1))
+;;; monte-carlo.scm
 
 (define (monte-carlo trials experiment)
     (define (iter trials-remaining trials-passed)

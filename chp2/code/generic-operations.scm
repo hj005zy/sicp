@@ -1,7 +1,6 @@
 ;;; generic-operations.scm
 
 (load "types.scm")
-(load "gcd.scm")
 (load "data-directed-complex-numbers.scm")
 
 (define (add x y) (apply-generic 'add x y))
