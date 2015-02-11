@@ -2,15 +2,6 @@
 
 (load "random-numbers.scm")
 
-(define (map-successive-pairs f s)
-    (cons-stream
-        (f (stream-car s) (stream-car (stream-cdr s)))
-        (map-successive-pairs f (stream-cdr (stream-cdr s)))))
-
-(define cesaro-stream
-    (map-successive-pairs (lambda (r1 r2) (= (gcd r1 r2) 1))
-                          random-numbers))
-
 (define (monte-carlo experiment-stream passed failed)
     (define (next passed failed)
         (cons-stream (/ passed (+ passed failed))
