@@ -1,19 +1,21 @@
-;;; random-gcd-test.scm
+;;; estimate-pi-2.scm
+
+(load "rand-update.scm")
 
 (define (estimate-pi trials)
     (sqrt (/ 6 (random-gcd-test trials random-init))))
 
 (define (random-gcd-test trials initial-x)
     (define (iter trials-remaining trials-passed x)
-        (let ((x1 (random-update x)))
-	    (let ((x2 (random-update x1)))
+        (let ((x1 (rand-update x)))
+	    (let ((x2 (rand-update x1)))
 	        (cond ((= trials-remaining 0)
-		       (/ trails-passed trials))
+		       (/ trials-passed trials))
 		      ((= (gcd x1 x2) 1)
-		       (iter (- trails-remaining 1)
-		             (+ trails-passed 1)
+		       (iter (- trials-remaining 1)
+		             (+ trials-passed 1)
 			     x2))
-		      (else (iter (- trails-remaining 1)
-		                 trails-passed
+		      (else (iter (- trials-remaining 1)
+		                 trials-passed
 				 x2))))))
     (iter trials 0 initial-x))
