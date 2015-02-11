@@ -19,7 +19,3 @@
     (if (stream-car experiment-stream)
         (next (+ passed 1) failed)
         (next passed (+ failed 1))))
-
-(define pi
-    (stream-map (lambda (p) (sqrt (/ 6 p)))
-                (monte-carlo cesaro-stream 0 0)))
