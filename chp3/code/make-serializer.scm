@@ -7,8 +7,8 @@
                 (mutex 'acquire)
                 (let ((val (apply p args)))
                     (mutex 'release)
-                    val)))
-        serialized-p))
+                    val))
+            serialized-p)))
 
 (define (make-mutex)
     (let ((cell (list false)))
