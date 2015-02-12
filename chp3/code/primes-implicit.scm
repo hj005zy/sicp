@@ -1,7 +1,7 @@
 ;;; primes-implicit.scm
 
 (load "divisible.scm")
-(load "integers.scm")
+(load "integers-implicit.scm")
 
 (define (prime? n)
     (define (iter ps)
