@@ -22,16 +22,16 @@ public class Queens {
         if (k == 0) {
             return new ArrayList<>();
         }
+        List<List<Integer>> cols = queenCols(k - 1);
         List<Integer> rowNumbers = new ArrayList<>(BOARD_SIEZ);
         for (int i = 1; i <= BOARD_SIEZ; i++) {
             rowNumbers.add(i);
         }
-        List<List<Integer>> all = new ArrayList<>();
-        List<List<Integer>> cols = queenCols(k - 1);
         if (cols.isEmpty()) {
             cols = new ArrayList<>();
             cols.add(new ArrayList<Integer>());
         }
+        List<List<Integer>> all = new ArrayList<>();
         for (List<Integer> restOfQueens : cols) {
             for (Integer rowNumber : rowNumbers) {
                 List<Integer> list = new ArrayList<>();
