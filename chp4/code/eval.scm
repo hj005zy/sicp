@@ -1,4 +1,5 @@
 ;;; eval.scm
+;;; load "apply-in-underlying-scheme.scm" manually first
 
 (load "eval-variable.scm")
 (load "eval-quote.scm")
@@ -9,10 +10,12 @@
 (load "eval-begin.scm")
 (load "eval-cond.scm")
 (load "eval-application.scm")
+(load "eval-procedure.scm")
+(load "eval-environment.scm")
 
 (define (eval exp env)
     (cond ((self-evaluating? exp) exp)
-          ((variable? exp) (look-variable-value exp env))
+          ((variable? exp) (lookup-variable-value exp env))
           ((quoted? exp) (text-of-quotation exp))
           ((assignment? exp) (eval-assignment exp env))
           ((definition? exp) (eval-definition exp env))
@@ -61,10 +64,3 @@
     (if (pair? exp)
         (eq? (car exp) tag)
         false))
-
-(define (true? x)
-    (not (eq? x false)))
-
-(define (false? x)
-    (eq? x false))
-
