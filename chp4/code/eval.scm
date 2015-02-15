@@ -1,6 +1,8 @@
 ;;; eval.scm
 ;;; load "apply-in-underlying-scheme.scm" manually first
 
+(load "tagged-list.scm")
+(load "eval-evaluating.scm")
 (load "eval-variable.scm")
 (load "eval-quote.scm")
 (load "eval-assignment.scm")
@@ -55,13 +57,3 @@
     (cond ((last-exp? exps) (eval (first-exp exps) env))
           (else (eval (first-exp exps) env)
                 (eval-sequence (rest-exps exps) env))))
-
-(define (self-evaluating? exp)
-    (cond ((number? exp) true)
-          ((string? exp) true)
-          (else false)))
-
-(define (tagged-list? exp tag)
-    (if (pair? exp)
-        (eq? (car exp) tag)
-        false))
