@@ -10,6 +10,7 @@
 (load "eval-begin.scm")
 (load "eval-cond.scm")
 (load "eval-application.scm")
+(load "eval-predicate.scm")
 (load "eval-procedure.scm")
 (load "eval-environment.scm")
 

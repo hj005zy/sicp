@@ -1,3 +1,3 @@
 ;;; apply-in-underlying-scheme.scm
 
-(define apply-in-underlying-scheme.scm apply)
+(define apply-in-underlying-scheme apply)
