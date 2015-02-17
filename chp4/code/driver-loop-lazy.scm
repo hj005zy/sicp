@@ -2,8 +2,8 @@
 
 (load "eval-lazy.scm")
 
-(define input-prompt ";;; M-Eval input:")
-(define output-prompt ";;; M-Eval value:")
+(define input-prompt ";;; L-Eval input:")
+(define output-prompt ";;; L-Eval value:")
 
 (define (driver-loop)
     (prompt-for-input input-prompt)
