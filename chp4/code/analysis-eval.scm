@@ -1,20 +1,7 @@
-;;; eval-analyze.scm
+;;; analysis-eval.scm
 ;;; load "apply-in-underlying-scheme.scm" manually first
 
-(load "tagged-list.scm")
-(load "eval-evaluating.scm")
-(load "eval-variable.scm")
-(load "eval-quote.scm")
-(load "eval-assignment.scm")
-(load "eval-definition.scm")
-(load "eval-if.scm")
-(load "eval-lambda.scm")
-(load "eval-begin.scm")
-(load "eval-cond.scm")
-(load "eval-application.scm")
-(load "eval-predicate.scm")
-(load "eval-procedure.scm")
-(load "eval-environment.scm")
+(load "eval-syntax.scm")
 
 (define (eval exp env)
     ((analyze exp) env))
