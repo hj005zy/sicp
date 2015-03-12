@@ -1,10 +1,6 @@
 ;;; sqrt.scm
 
-(define (average x y)
-    (/ (+ x y) 2))
-
-(define (improve guess x)
-    (average guess (/ x guess)))
+(load "sqrt-improve.scm")
 
 (define (good-enough? guess x)
     (< (abs (- (square guess) x)) 0.001))

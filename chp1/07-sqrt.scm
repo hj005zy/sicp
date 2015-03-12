@@ -1,9 +1,7 @@
 ;;; 07-sqrt.scm
 
 (load "sqrt.scm")
-
-(define (good-enough? old-guess new-guess)
-    (< (/ (abs (- old-guess new-guess)) old-guess) 0.001))
+(load "07-good-enough.scm")
 
 (define (sqrt-iter guess x)
     (if (good-enough? guess (improve guess x))
